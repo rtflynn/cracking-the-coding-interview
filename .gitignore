@@ -1,0 +1,16 @@
+*.exe
+*.ilk
+*.pdb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.tlog
+*.log
+*.obj
+*.pch
+*.idb
+*.lastbuildstate
+*.suo
+*.VC.db
+*.ipch
+*.sln
