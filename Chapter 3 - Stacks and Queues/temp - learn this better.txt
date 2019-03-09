@@ -1,0 +1,49 @@
+#include "stdafx.h"
+#include <iostream>
+
+
+class Counter
+{
+public:
+	static Counter & getInstance()
+	{
+		static Counter ourInstance;
+		return ourInstance;
+	}
+	Counter(const Counter &) = delete;
+	void operator=(const Counter &) = delete;
+	void increment() { ++count; }
+	int getCount() { return count; }
+
+private:
+	Counter() {}
+	int count = 0;
+};
+
+
+
+
+int main()
+{
+	Counter * first;
+	Counter * second;
+
+	std::cout << first->getInstance().getCount() << std::endl;
+	first->getInstance().increment();
+	std::cout << first->getInstance().getCount() << std::endl;
+	first->getInstance().increment();
+	std::cout << first->getInstance().getCount() << std::endl;
+	first->getInstance().increment();
+	std::cout << first->getInstance().getCount() << std::endl;
+	first->getInstance().increment();
+
+	std::cout << second->getInstance().getCount() << std::endl;
+	second->getInstance().increment();
+	std::cout << second->getInstance().getCount() << std::endl;
+	second->getInstance().increment();
+
+
+
+    return 0;
+}
+
